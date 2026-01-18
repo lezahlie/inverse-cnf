@@ -152,15 +152,19 @@ class PreprocessDataset(Dataset):
 
         transforms = self.data_transforms.get(group, {})
         images, scalars = self._process_columns(sample, as_list(names), as_list(types), transforms)
-
+        allow_broadcast = ["input", "target"]
         if images is not None and scalars is not None:
-            H, W = self.expected_hw
-            scalars_map = scalars.view(-1, 1, 1).expand(-1, H, W)
-            return pt.cat([images, scalars_map], dim=0)
+            if group in allow_broadcast:
+                H, W = self.expected_hw
+                scalars_map = scalars.view(-1, 1, 1).expand(-1, H, W)
+                return pt.cat([images, scalars_map], dim=0)
+            return (images, scalars)
         elif scalars is not None:
-            H, W = self.expected_hw
-            scalars_map = scalars.view(-1, 1, 1).expand(-1, H, W)
-            return scalars_map
+            if group in allow_broadcast:
+                H, W = self.expected_hw
+                scalars_map = scalars.view(-1, 1, 1).expand(-1, H, W)
+                return scalars_map
+            return scalars
         elif images is not None:
             return images
 

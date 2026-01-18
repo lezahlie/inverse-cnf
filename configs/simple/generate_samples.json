@@ -1,7 +1,7 @@
 {
     "train": false,
     "gpu-device-list": [0],
-    "gpu-memory-fraction": 0.5,
+    "gpu-memory-fraction": 0.9,
     "cpu-device-only": false,
     "ntasks": 2,
     "random-seed": 42,

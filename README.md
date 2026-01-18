@@ -1237,7 +1237,7 @@ python simulators/heat_diffusion_simulation/create_dataset.py \
     --output-folder "${INVERSE_CNF_OUTPUT_DIR}/subsets/electrostatic_split_702010_batch_25" \
     --output-folder "${INVERSE_CNF_OUTPUT_DIR}/experiments/electrostatic_train_model/best_model_state" \
     --model-state-path "${INVERSE_CNF_OUTPUT_DIR}/experiments/electrostatic_train_model/checkpoints/best_model_state_*.pt" \
-    --model-params-path "${INVERSE_CNF_OUTPUT_DIR}/experiments/electrostatic_train_model/parameters/model_params.json"
+    --model-params-path "${INVERSE_CNF_OUTPUT_DIR}/experiments/electrostatic_train_model/parameters/model_params.json" \
     --generation-samples 1000 \
     --generation-limit 25 \
     --generation-noise 1.0
@@ -1269,7 +1269,7 @@ python simulators/heat_diffusion_simulation/create_dataset.py \
     --input-folder "${INVERSE_CNF_OUTPUT_DIR}/subsets/heat_diffusion_split_801505_batch_25" \
     --output-folder "${INVERSE_CNF_OUTPUT_DIR}/experiments/heat_diffusion_train_model/best_model_state" \
     --model-state-path "${INVERSE_CNF_OUTPUT_DIR}/experiments/heat_diffusion_train_model/checkpoints/best_model_state_*.pt" \
-    --model-params-path "${INVERSE_CNF_OUTPUT_DIR}/experiments/heat_diffusion_train_model/parameters/model_params.json"
+    --model-params-path "${INVERSE_CNF_OUTPUT_DIR}/experiments/heat_diffusion_train_model/parameters/model_params.json" \
     --generation-samples 1000 \
     --generation-limit 25 \
     --generation-noise 1.0

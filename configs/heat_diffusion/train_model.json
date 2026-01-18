@@ -3,7 +3,7 @@
     "plot-debug-images": false,
     "cpu-device-only": false,
     "gpu-device-list": [0],
-    "gpu-memory-fraction": 0.8,
+    "gpu-memory-fraction": 0.9,
     "ntasks": 2,
     "random-seed": 42,
     "input-folder": "${INVERSE_CNF_OUTPUT_DIR}/subsets/heat_diffusion_split_801505_batch_25",
